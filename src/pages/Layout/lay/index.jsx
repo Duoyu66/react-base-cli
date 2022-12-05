@@ -6,12 +6,13 @@ const items1 = ['1', '2', '3'].map((key) => ({
     key,
     label: `nav ${key}`,
 }));
+const daohang=['数据概览','内容管理','发布文章'];
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
     const key = String(index + 1);
     return {
         key: `sub${key}`,
         icon: React.createElement(icon),
-        label: `subnav ${key}`,
+        label: `${daohang[key-1]}`,
         children: new Array(4).fill(null).map((_, j) => {
             const subKey = index * 4 + j + 1;
             return {
@@ -21,7 +22,7 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, i
         }),
     };
 });
-const App = () => (
+const Lay = () => (
     <Layout>
         <Header className="header">
             <div className="logo" />
@@ -52,7 +53,7 @@ const App = () => (
                 >
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
                     <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
+                    <Breadcrumb.Item>Lay</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
                     className="site-layout-background"
@@ -68,4 +69,4 @@ const App = () => (
         </Layout>
     </Layout>
 );
-export default App;
+export default Lay;

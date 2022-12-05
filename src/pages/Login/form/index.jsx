@@ -4,7 +4,7 @@ import {login} from "@/api/user";
 const Former = () => {
     const onFinish =async ({mobile,code}) => {
         // console.log('Success:', values);
-        thi.setState({
+        this.setState({
             loading:true
         })
   try {
